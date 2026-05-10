@@ -62,26 +62,26 @@ No AWS credentials, OpenAI key, AI model, OPA server, Postgres, or DynamoDB tabl
 Try demo scenarios:
 
 ```bash
-curl http://localhost:8000/health | rich --json -
-curl http://localhost:8000/demo/scenarios | rich --json -
-curl http://localhost:8000/demo/run/approved-dashboard | rich --json -
-curl http://localhost:8000/demo/run/manual-approval-payroll | rich --json -
-curl http://localhost:8000/demo/run/rejected-production-api | rich --json -
+curl http://localhost:8000/health
+curl http://localhost:8000/demo/scenarios
+curl http://localhost:8000/demo/run/approved-dashboard
+curl http://localhost:8000/demo/run/manual-approval-payroll
+curl http://localhost:8000/demo/run/rejected-production-api
 ```
 
 The demo run endpoint accepts both `GET` and `POST`, so these also work:
 
 ```bash
-curl -X POST http://localhost:8000/demo/run/approved-dashboard | rich --json -
-curl -X POST http://localhost:8000/demo/run/manual-approval-payroll | rich --json -
-curl -X POST http://localhost:8000/demo/run/rejected-production-api | rich --json -
+curl -X POST http://localhost:8000/demo/run/approved-dashboard
+curl -X POST http://localhost:8000/demo/run/manual-approval-payroll
+curl -X POST http://localhost:8000/demo/run/rejected-production-api
 ```
 
 Policy files in `app/policy` are loaded automatically in local memory mode when the app starts. If you edit those files while the server is running, reload them without restarting:
 
 ```bash
-curl -X POST http://localhost:8000/policies/reload | rich --json -
-curl http://localhost:8000/policies | rich --json -
+curl -X POST http://localhost:8000/policies/reload
+curl http://localhost:8000/policies
 ```
 
 Start OPA and Postgres:
@@ -155,7 +155,7 @@ curl -X POST http://localhost:8000/access/request \
       "clearance": "internal"
     },
     "requested_duration_hours": 8
-  }' | rich --json -
+  }'
 ```
 
 Useful endpoints:
@@ -179,3 +179,19 @@ If dependencies are not installed yet, a lightweight syntax check still works wi
 ```bash
 python3 -m compileall app tests
 ```
+
+
+
+## 📩 Contact
+
+| Name              | Details                             |
+|-------------------|-------------------------------------|
+| **👨‍💻 Developer**  | Sachin Arora                      |
+| **📧 Email**      | [sachnaror@gmail.com](mailto:sacinaror@gmail.com) |
+| **📍 Location**   | Noida, India                       |
+| **📂 GitHub**     | [Link](https://github.com/sachnaror) |
+| **🌐 Youtube**    | [Link](https://www.youtube.com/@sachnaror4841/videos) |
+| **🌐 Blog**       | [Link](https://medium.com/@schnaror) |
+| **🌐 Website**    | [Link](https://about.me/sachin-arora) |
+| **🌐 Twitter**    | [Link](https://twitter.com/sachinhep) |
+| **📱 Phone**      | [+91 9560330483](tel:+919560330483) |
