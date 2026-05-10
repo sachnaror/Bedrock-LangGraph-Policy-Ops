@@ -1,0 +1,26 @@
+[
+  {
+    "permission_set": "employee-readonly",
+    "description": "Default employee access to non-sensitive resources.",
+    "roles": ["employee"],
+    "allowed_actions": ["read"],
+    "allowed_resource_types": ["document", "dashboard"],
+    "denied_actions": ["write", "admin", "delete"]
+  },
+  {
+    "permission_set": "api-consumer",
+    "description": "Application teams can invoke approved APIs.",
+    "roles": ["developer", "service-owner"],
+    "allowed_actions": ["read", "invoke"],
+    "allowed_resource_types": ["api"],
+    "denied_actions": ["delete"]
+  },
+  {
+    "permission_set": "security-admin",
+    "description": "Security admins can administer governed resources except destructive delete.",
+    "roles": ["security", "admin"],
+    "allowed_actions": ["read", "invoke", "write", "admin"],
+    "allowed_resource_types": ["api", "document", "dashboard"],
+    "denied_actions": ["delete"]
+  }
+]

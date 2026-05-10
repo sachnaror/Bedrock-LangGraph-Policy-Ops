@@ -1,0 +1,42 @@
+[
+  {
+    "control_id": "risk-confidential-resource",
+    "description": "Confidential resources add moderate risk.",
+    "when": {
+      "resource.sensitivity": "confidential"
+    },
+    "risk_delta": 25
+  },
+  {
+    "control_id": "risk-restricted-resource",
+    "description": "Restricted resources add high risk.",
+    "when": {
+      "resource.sensitivity": "restricted"
+    },
+    "risk_delta": 45
+  },
+  {
+    "control_id": "risk-cross-department",
+    "description": "Cross-department access increases review burden.",
+    "when": {
+      "subject.department_not": "${resource.owner_department}"
+    },
+    "risk_delta": 15
+  },
+  {
+    "control_id": "risk-long-duration",
+    "description": "Requests longer than 24 hours should be reviewed.",
+    "when": {
+      "requested_duration_hours_gt": 24
+    },
+    "risk_delta": 15
+  },
+  {
+    "control_id": "risk-privileged-action",
+    "description": "Write, admin, and delete actions are privileged.",
+    "when": {
+      "action": ["write", "admin", "delete"]
+    },
+    "risk_delta": 20
+  }
+]

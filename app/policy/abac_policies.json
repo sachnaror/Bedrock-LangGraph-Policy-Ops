@@ -1,0 +1,34 @@
+[
+  {
+    "policy_id": "abac-internal-same-department-read",
+    "tenant_id": "zoneone",
+    "name": "Allow same-department read access to internal resources",
+    "effect": "allow",
+    "conditions": {
+      "subject.department": "${resource.owner_department}",
+      "resource.sensitivity": ["public", "internal"],
+      "action": ["read", "invoke"]
+    }
+  },
+  {
+    "policy_id": "abac-confidential-owner-or-auditor",
+    "tenant_id": "zoneone",
+    "name": "Allow confidential access for owning department, auditors, or security",
+    "effect": "allow",
+    "conditions": {
+      "resource.sensitivity": "confidential",
+      "subject.role": ["auditor", "security", "admin"],
+      "action": ["read"]
+    }
+  },
+  {
+    "policy_id": "abac-deny-restricted-without-clearance",
+    "tenant_id": "zoneone",
+    "name": "Deny restricted resources without restricted clearance",
+    "effect": "deny",
+    "conditions": {
+      "resource.sensitivity": "restricted",
+      "subject.clearance_not": "restricted"
+    }
+  }
+]
