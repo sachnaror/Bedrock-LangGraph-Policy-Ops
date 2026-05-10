@@ -5,7 +5,7 @@ A FastAPI service where users request access to APIs, documents, and dashboards 
 ## Architecture
 
 ```
-├── Bedrock-Lang-Graph-Policy-Ops-AIenterprise/
+├── Bedrock-LangGraph-Policy-Ops/
 │   ├── requirements.txt
 │   ├── README.md
 │   ├── .env
@@ -71,7 +71,7 @@ Every response includes a `trace` array showing each agent's summary, details, a
 ## Local Demo Setup
 
 ```bash
-cd /Users/homesachin/Desktop/zoneone/Bedrock-Lang-Graph-Policy-Ops-AIenterprise
+cd /Users/homesachin/Desktop/zoneone/Bedrock-LangGraph-Policy-Ops
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
@@ -132,7 +132,7 @@ docker compose up -d opa postgres
 
 `.env` is loaded by `python-dotenv` in `app/config.py`.
 
-The committed [.env.example](/Users/homesachin/Desktop/zoneone/Bedrock-Lang-Graph-Policy-Ops-AIenterprise/.env.example) file is the dotenv template for GitHub users. It documents every supported runtime variable with safe placeholder values. Create your private `.env` from it:
+The committed [.env.example](/Users/homesachin/Desktop/zoneone/Bedrock-LangGraph-Policy-Ops/.env.example) file is the dotenv template for GitHub users. It documents every supported runtime variable with safe placeholder values. Create your private `.env` from it:
 
 ```bash
 cp .env.example .env
