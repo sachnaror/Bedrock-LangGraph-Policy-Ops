@@ -4,6 +4,44 @@ A FastAPI service where users request access to APIs, documents, and dashboards 
 
 ## Architecture
 
+```
+├── Bedrock-Lang-Graph-Policy-Ops-AIenterprise/
+│   ├── requirements.txt
+│   ├── README.md
+│   ├── .env
+│   ├── docker-compose.yml
+│   ├── .env.example
+│   ├── app/
+│   │   ├── config.py
+│   │   ├── models.py
+│   │   ├── main.py
+│   │   └── dependencies.py
+│   │   ├── agents/
+│   │   │   ├── governance_graph.py
+│   │   ├── api/
+│   │   │   └── routes.py
+│   │   ├── services/
+│   │   │   ├── bedrock_client.py
+│   │   │   ├── policy_engine.py
+│   │   │   ├── policy_store.py
+│   │   │   └── opa_client.py
+│   │   ├── policy/
+│   │   │   ├── iam_permission_sets.json
+│   │   │   ├── README.md
+│   │   │   ├── abac_policies.json
+│   │   │   └── risk_controls.json
+│   ├── tests/
+│   │   └── test_governance_workflow.py
+│   ├── opa/
+│   │   ├── policies/
+│   │   │   ├── access.rego
+│   │   │   ├── document_access.rego
+│   │   │   ├── dashboard_access.rego
+│   │   │   └── api_access.rego
+
+
+```
+
 Request flow:
 
 ```text
